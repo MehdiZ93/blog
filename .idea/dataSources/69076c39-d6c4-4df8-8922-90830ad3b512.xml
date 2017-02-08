@@ -10,26 +10,48 @@
     <schema id="4" parent="1" name="mysql"/>
     <schema id="5" parent="1" name="performance_schema"/>
     <schema id="6" parent="1" name="sys"/>
-    <table id="7" parent="2" name="article"/>
-    <column id="8" parent="7" name="id">
+    <schema id="7" parent="1" name="etna2"/>
+    <schema id="8" parent="1" name="marmiton"/>
+    <table id="9" parent="2" name="article"/>
+    <table id="10" parent="2" name="categorie"/>
+    <column id="11" parent="9" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="9" parent="7" name="titre">
+    <column id="12" parent="9" name="titre">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="10" parent="7" name="contenu">
+    <column id="13" parent="9" name="contenu">
       <Position>3</Position>
       <DataType>longtext|0</DataType>
     </column>
-    <column id="11" parent="7" name="date">
+    <column id="14" parent="9" name="date">
       <Position>4</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <key id="12" parent="7" name="PRIMARY">
+    <column id="15" parent="9" name="categorie_id">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="16" parent="9" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="17" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="18" parent="10" name="titre">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="19" parent="10" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>

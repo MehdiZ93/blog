@@ -8,12 +8,23 @@ class Article extends Table {
 
     protected static $table = 'article';
 
+    public static function find($id){
+        return self::query("
+            SELECT article.id, article.titre, contenu, categorie.titre AS categorie 
+            FROM article
+            LEFT JOIN categorie 
+              ON categorie_id = categorie.id
+            WHERE article.id = ?
+              ", [$id], true);
+    }
+
     public static function getLast(){
         return self::query("
             SELECT article.id, article.titre, contenu, categorie.titre AS categorie 
             FROM article
             LEFT JOIN categorie 
               ON categorie_id = categorie.id
+            ORDER BY article.id DESC
               ");
     }
 
